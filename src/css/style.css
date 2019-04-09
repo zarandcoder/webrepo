@@ -1,0 +1,109 @@
+@import '../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css';
+/*Font definitions*/
+html, body, header, .view {
+  height: 100%;
+  text-transform: uppercase;
+}
+
+/*Defenition of the navigation sidebar*/
+.sidenav {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0.9;
+  overflow: auto;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
+.sidenav-zarlight {
+  text-align: center;
+  margin: 65px 0 65px;
+}
+.sidenav a {
+  text-align: center;
+  padding: 10px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.bg {
+  background: url("../img/walkingman.jpg") no-repeat center center;
+}
+.bg .icon-bar {
+  position: absolute;
+  top: 80%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  /* Style the icon bar links */
+}
+.bg .icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 13px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+  /* Style the social media icons with color, if you want */
+}
+.bg .icon-bar a:hover {
+  background-color: #290101;
+}
+.bg .facebook {
+  background: #3B5998;
+  color: white;
+}
+.bg .twitter {
+  background: #55ACEE;
+  color: white;
+}
+.bg .vk {
+  background: #3B5998;
+  color: white;
+}
+.bg .linkedin {
+  background: #007bb5;
+  color: white;
+}
+.bg .youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.header-who {
+  margin-top: 65px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidenav a {
+    float: left;
+  }
+  .sidenav .view {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .sidenav a {
+    text-align: center;
+    float: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

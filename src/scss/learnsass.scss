@@ -1,0 +1,159 @@
+@import 'reset';
+
+
+$font-stack: Helvetica, sans-serif; //variables
+$primaty-color: #333;
+
+$variable-font-white: #fff;
+
+
+body {
+    $global-var: 5px !global;
+    font: 100% $font-stack;
+    color: $primaty-color;
+}
+
+/*
+Examle of using of nested elements
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block; 
+    }
+
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+}
+*/
+
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+
+.box {
+    @include transform(rotate(30deg));
+    height: 200px;
+    width: 200px;
+    margin-top: 200px;
+    margin-left: 500px;
+    border: 30px solid #d61616;
+    background-color: rgb(4, 85, 48);
+    margin-right: 300px;
+}
+
+/*Extend/Inheritance*/
+/* This CSS will print because %message-shared is extended. */
+
+%message-shared {
+    bottom: 1px solid #cccccc;
+    padding: 10px;
+    color: #333333;
+}
+
+/*This CSS won't print because %equal-heights is never extended.*/
+%equal-heigths {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message {
+    @extend %message-shared;
+}
+
+.success {
+    @extend %message-shared;
+    background-color: green;
+}
+
+.error {
+    @extend %message-shared;
+    background-color: red;
+}
+
+.warning {
+    @extend %message-shared;
+    background-color: yellow;
+}
+
+
+.container {
+    width: 100%;
+}
+
+aside[role="main"] {
+    float: left;
+    width: 600px / 960px * 100%;
+}
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+.box {
+    margin-top: 100px;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(3, 47, 240);
+}
+@include media-breakpoint-up(sm) {
+    .box {
+        margin-top: 100px;
+        height: 100px;
+        width: 100px;
+        background-color: #000;
+    }
+}
+@include media-breakpoint-up(md) {
+    .box {
+        margin-top: 100px;
+        height: 100px;
+        width: 100px;
+        background-color: rgb(226, 9, 9);
+    }
+}
+@include media-breakpoint-up(lg) {
+    .box {
+        margin-top: 100px;
+        height: 100px;
+        width: 100px;
+        background-color: rgb(6, 221, 114);
+    }
+}
+@include media-breakpoint-up(xl) {
+    .box {
+        margin-top: 100px;
+        height: 100px;
+        width: 100px;
+        background-color: rgb(156, 33, 130);
+    }
+}
+
+
+
+
+/*
+// Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
+.box {
+  display: block;
+}
+@include media-breakpoint-up(sm) {
+  .box {
+    display: inline;
+  }
+}
+// Example: Style from medium breakpoint and down
+@include media-breakpoint-down(md) {
+    .box {
+      display: block;
+    }
+}
+*/

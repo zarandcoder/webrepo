@@ -1,0 +1,125 @@
+@import '../bootstrap/node_modules/bootstrap/dist/css/bootstrap.css';
+
+/*Font definitions*/
+$font-main: "Montserrat";
+
+html,body,header,.view {
+  height: 100%;
+  text-transform: uppercase;
+}
+
+/*Defenition of the navigation sidebar*/
+.sidenav {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0.9;
+  overflow: auto;
+  
+  font-family: $font-main, sans-serif;
+  font-style: normal;
+  
+  
+  &-zarlight {
+    text-align: center;
+    margin: 65px 0 65px;
+  }
+
+  & a {
+    text-align: center;
+    padding: 10px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+
+    &:hover {
+      color: #f1f1f1;
+    }
+  }
+
+}
+
+.bg {
+  background: url("../img/walkingman.jpg") no-repeat center center;
+  
+  .icon-bar {
+    position: absolute;
+    top: 80%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1;
+
+    /* Style the icon bar links */
+    a {
+      display: block;
+      text-align: center;
+      padding: 13px;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 20px;
+    
+      /* Style the social media icons with color, if you want */
+      &:hover {
+        background-color: rgb(41, 1, 1);
+      }
+    }
+  } 
+  .facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .vk {
+    background: #3B5998;
+    color: white;
+  }
+
+  .linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  .youtube {
+    background: #bb0000;
+    color: white;
+  }
+}
+
+.header-who {
+  margin-top: 65px;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    & a {
+      float: left;
+    }
+    .view {margin-left: 0;}
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidenav a {
+    text-align: center;
+    float: none;  
+  }
+}
